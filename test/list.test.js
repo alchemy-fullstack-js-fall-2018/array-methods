@@ -97,11 +97,17 @@ describe('foreach', () => {
 
     it('returns undefined', () => {
         const list = new List([1, 2, 3]);
-        const foreachedList = list.foreach();
+        const foreachedList = list.foreach(item => item);
         assert.equal(foreachedList, undefined);        
     });
+
+    it('does the right number of actions', () => {
+        const list = new List([1, 2, 3]);
+        let actions = 0;
+        list.foreach(() => actions += 1);
+        assert.equal(actions, 3);        
+    });
     
-    // list.foreach(item => console.log(item));
 
 });
 
