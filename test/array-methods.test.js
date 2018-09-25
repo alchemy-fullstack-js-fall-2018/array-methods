@@ -100,6 +100,29 @@ describe('findIndex', () => {
     
 });
 
+describe('reduce', () => {
+
+    const accumulator = (item, currentValue) => {
+        currentValue = item + currentValue;
+        return currentValue;
+
+    };
+    
+    describe('reduce method tests', () => {
+        
+        it('returns an the sum of all items in the array plus an intial value', () => {
+            const list = new List([1, 4, 5, 6], 5);
+            const sum = list.reduce((item, currentValue) => {
+                return accumulator(item, currentValue);
+            });
+
+            assert.deepEqual(sum, 21);
+        });    
+
+    });
+    
+});
+
 describe('every', () => {
 
     const isEven = item => {
