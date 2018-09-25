@@ -1,0 +1,26 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeBLambert/array-methods.git"
+  },
+  "author": "Mike Lambert <mlamb128@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikeBLambert/array-methods/issues"
+  },
+  "homepage": "https://github.com/MikeBLambert/array-methods#readme",
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "jest": "^23.6.0"
+  }
+}
