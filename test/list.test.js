@@ -63,10 +63,18 @@ describe('findIndex', () => {
 
 describe('reduce', () => {
 
-    it('returns the accumulator after iterating through the array', () => {
+    it('returns a numerical accumulator after iterating through the array', () => {
         const list = new List([1, 2, 3]);
-        const reducedList = list.reduce(((accumulator, item) => accumulator + (item * 2)), 0);
+        const reducedList = list.reduce((accumulator, item) => accumulator + (item * 2), 0);
         assert.equal(reducedList, 12);
+    });
+    it('returns an array accumulator after iterating through the array', () => {
+        const list = new List([1, 2, 3]);
+        const reducedList = list.reduce((accumulator, item) => {
+            accumulator.push(item);
+            return accumulator;
+        }, []);
+        assert.deepEqual(reducedList, [1, 2, 3]);
     });
 
 });
