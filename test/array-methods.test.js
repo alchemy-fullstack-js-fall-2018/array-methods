@@ -99,15 +99,26 @@ describe('reduce', () => {
 
         it('returns sum of an array', () => {
             const numbers = [1, 2, 3, 4];
-            const sum = numbers.reduce((acc, item) => acc + item);
+            const sum = numbers.reduce((acc, item) => acc + item, 0);
             assert.equal(sum, 10);
         });
 
+        it('returns sum of an array without initial value', () => {
+            const numbers = [1, 2, 3, 4];
+            const sum = numbers.reduce((acc, item) => acc + item);
+            assert.equal(sum, 10);
+        });
     });
 
     it('returns sum of an array', () => {
         const list = new List([1, 2, 3, 4]);
-        const sum = list.reduce(((acc, item) => acc + item), 0);
+        const sum = list.reduce((acc, item) => acc + item, 0);
+        assert.equal(sum, 10);
+    });
+
+    it('returns sum of an array without initial value', () => {
+        const list = new List([1, 2, 3, 4]);
+        const sum = list.reduce((acc, item) => acc + item);
         assert.equal(sum, 10);
     });
 });
