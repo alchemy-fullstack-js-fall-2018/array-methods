@@ -6,13 +6,13 @@ describe('array methods', () => {
     let list;
     
     beforeEach(() => {
-        list = new List([1, 2, 3, 4]);
+        list = new List([1, 2, , 3, 4]);
     });
 
     describe('map', () => {
         it('should be a direct copy of original array', () => {
             const result = list.map(this.items, (n) => n);
-            assert.deepEqual(result, [1, 2, 3, 4]);
+            assert.deepEqual(result, [1, 2, , 3, 4]);
         });
     });
 
@@ -25,8 +25,8 @@ describe('array methods', () => {
 
     describe('findIndex', () => {
         it('returns first truthy item in array', () => {
-            const result = list.findIndex(this.items, (n) => n > 3);
-            assert.deepEqual(result, 3);
+            const result = list.findIndex(this.items, (n) => n === 1);
+            assert.deepEqual(result, 0);
         });
 
         it('returns -1 if item not found', () => {
