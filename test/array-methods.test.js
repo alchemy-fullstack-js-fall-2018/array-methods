@@ -24,6 +24,7 @@ describe('map', () => {
         const newNumbers = list.map(item => item + 1);
         assert.deepEqual(newNumbers, [2, 3, 4]);
     });
+
     it('returns same length as original array', () => {
         const list = new List ([1, 2, 3]);
         const result = list.map(item => item + 1).length;
@@ -53,10 +54,43 @@ describe('filter', () => {
         const result = list.filter((item) => item % 2 === 0);
         assert.deepEqual(result, [2, 4]);
     });
+
     it('returns truthly value', () => {
         const list = new List([1, 2, 3, 4]);
         const result = list.filter((item) => item == '2' || item == '4');
         assert.deepEqual(result, [2, 4]);
+    });
+
+});
+
+describe('findIndex', () => {
+
+    describe('assumptions', () => {
+
+        it('finds the first index that is greater than 10', () => {
+            const numbers = [1, 10, 14];
+            const result = numbers.findIndex((item) => item > 10);
+            assert.equal(result, 2);
+        });
+
+        it('if no index is found return -1', () => {
+            const numbers = [1, 2, 4];
+            const result = numbers.findIndex((item) => item > 10);
+            assert.equal(result, -1);
+        });
+
+    });
+
+    it('finds the first index that is greater than 10', () => {
+        const list = new List([1, 10, 14]);
+        const result = list.findIndex((item) => item > 10);
+        assert.equal(result, 2);
+    });
+
+    it('if no index is found return -1', () => {
+        const list = new List([1, 2, 4]);
+        const result = list.findIndex((item) => item > 10);
+        assert.equal(result, -1);
     });
 
 });
