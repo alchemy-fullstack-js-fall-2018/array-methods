@@ -35,5 +35,22 @@ describe('array methods', () => {
         });
     });
 
+    describe('reduce', () => {
+        it('returns the sum of all array items', () => {
+            const result = list.reduce(this.items, (a, b) => (a + b));
+            assert.deepEqual(result, 10);
+        });
+    });
     
+    describe('every', () => {
+        it('returns true if every element described by the callback passes', () => {
+            const result = list.every(this.items, (n) => n < 5);
+            assert.equal(result, true);
+        });
+
+        it('returns false if one element fails callback check', () => {
+            const result = list.every(this.items, (n) => n > 5);
+            assert.equal(result, false);
+        });
+    });
 });
