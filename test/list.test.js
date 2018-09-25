@@ -7,17 +7,13 @@ describe('map', () => {
 
     it('returns an array of the same length', () => {
         const list = new List([1, 2, 3]);
-        const mappedList = list.map(item => {
-            return item;
-        });
+        const mappedList = list.map(item => item);
         assert.equal(mappedList.length, list.items.length);
     });
 
     it('returns an array of numbers where each value is x2 of the input array', () => {
         const list = new List([1, 2, 3]);
-        const mappedList = list.map(item => {
-            return item * 2;
-        });
+        const mappedList = list.map(item => item * 2);
         assert.deepEqual(mappedList, [2, 4, 6]);
     });
 
@@ -33,17 +29,13 @@ describe('filter', () => {
 
     it('returns an array of strictly matching values', () => {
         const list = new List([1, 2, 3]);
-        const filteredList = list.filter(item => {
-            return item % 2 === 0;
-        });
+        const filteredList = list.filter(item => item % 2 === 0);
         assert.equal(filteredList, 2);
     });
 
     it('returns an array of loosely matching values', () => {
         const list = new List([1, 2, 3]);
-        const filteredList = list.filter(item => {
-            return item == '2';
-        });
+        const filteredList = list.filter(item => item == '2');
         assert.equal(filteredList, 2);
     });
 });
@@ -52,17 +44,13 @@ describe('findIndex', () => {
 
     it('returns the index of the first strictly matching value', () => {
         const list = new List([1, 2, 3]);
-        const foundIndex = list.findIndex(item => {
-            return item % 2 === 0;
-        });
+        const foundIndex = list.findIndex(item => item % 2 === 0);
         assert.equal(foundIndex, 1);
     });
 
     it('returns the index of the first strictly matching value', () => {
         const list = new List([1, 2, 3]);
-        const foundIndex = list.findIndex(item => {
-            return item == '2';
-        });
+        const foundIndex = list.findIndex(item => item == '2');
         assert.equal(foundIndex, 1);
     });
 
