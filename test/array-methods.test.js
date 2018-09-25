@@ -24,5 +24,39 @@ describe('map', () => {
         const newNumbers = list.map(item => item + 1);
         assert.deepEqual(newNumbers, [2, 3, 4]);
     });
+    it('returns same length as original array', () => {
+        const list = new List ([1, 2, 3]);
+        const result = list.map(item => item + 1).length;
+        assert.equal(result, 3);
+    });
+});
+
+describe('filter', () => {
+
+    describe('assumptions', () => {
+
+        it('returns only even numbers within the array', () => {
+            const numbers = [1, 2, 3, 4];
+            const result = numbers.filter((item) => item % 2 === 0);
+            assert.deepEqual(result, [2, 4]);
+        });
+
+        it('returns truthly value', () => {
+            const numbers = [1, 2, 3, 4];
+            const result = numbers.filter((item) => item == '2');
+            assert.deepEqual(result, [2]);
+        });
+
+    });
+    it('returns only even numbers within the array', () => {
+        const list = new List([1, 2, 3, 4]);
+        const result = list.filter((item) => item % 2 === 0);
+        assert.deepEqual(result, [2, 4]);
+    });
+    it('returns truthly value', () => {
+        const list = new List([1, 2, 3, 4]);
+        const result = list.filter((item) => item == '2' || item == '4');
+        assert.deepEqual(result, [2, 4]);
+    });
 
 });
