@@ -7,7 +7,7 @@ describe('map', () => {
         return number * 2;
     }
 
-    it('map: returns a List where each item has been transformed according to the callback', () => {
+    it('map: returns an array where each item has been transformed according to the callback', () => {
         const list = new List([1, 2, 3]);
         const result = list.map(doubleMe);
         assert.deepEqual(result, [2, 4, 6]);
@@ -29,7 +29,7 @@ describe('filter', () => {
         return number % 2 === 0;
     }
 
-    it('filter: returns a List containing only the elements that meet the criteria in the callback', () => {
+    it('filter: returns an array containing only the elements that meet the criteria in the callback', () => {
         const list = new List([1, 2, 3, 4]);
         const result = list.filter(isEven);
         assert.deepEqual(result, [2, 4]);
