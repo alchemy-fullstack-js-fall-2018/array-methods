@@ -1,3 +1,5 @@
+/*eslint-disable no-sparse-arrays*/
+
 const assert = require('assert');
 const List = require('../lib/list');
 
@@ -19,6 +21,25 @@ describe('map', () => {
         assert.deepEqual(mappedList, [2, 4, 6]);
     });
 
+    it('preserves holes', () => {
+        const list = new List([1,, 2, 3]);
+
+        // do this later
+        
+    });
+});
+
+describe('filter', () => {
+
+    it('returns an array of matching values', () => {
+
+        const list = new List([1, 2, 3]);
+        const filteredList = list.filter(item => {
+            return item % 2 === 0;
+        });
+        assert.equal(filteredList, 2);
+
+    });
 
 
 });
