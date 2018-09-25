@@ -65,7 +65,7 @@ describe('reduce', () => {
 
     it('returns the accumulator after iterating through the array', () => {
         const list = new List([1, 2, 3]);
-        const reducedList = list.reduce((accumulator, item) => accumulator += item * 2);
+        const reducedList = list.reduce(((accumulator, item) => accumulator + (item * 2)), 0);
         assert.equal(reducedList, 12);
     });
 
