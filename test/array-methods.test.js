@@ -60,7 +60,6 @@ describe('filter', () => {
         const result = list.filter((item) => item == '2' || item == '4');
         assert.deepEqual(result, [2, 4]);
     });
-
 });
 
 describe('findIndex', () => {
@@ -92,5 +91,23 @@ describe('findIndex', () => {
         const result = list.findIndex((item) => item > 10);
         assert.equal(result, -1);
     });
+});
 
+describe('reduce', () => {
+
+    describe('assumptions', () => {
+
+        it('returns sum of an array', () => {
+            const numbers = [1, 2, 3, 4];
+            const sum = numbers.reduce((acc, item) => acc + item);
+            assert.equal(sum, 10);
+        });
+
+    });
+
+    it('returns sum of an array', () => {
+        const list = new List([1, 2, 3, 4]);
+        const sum = list.reduce(((acc, item) => acc + item), 0);
+        assert.equal(sum, 10);
+    });
 });
