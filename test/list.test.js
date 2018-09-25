@@ -42,10 +42,22 @@ describe('filter', () => {
     it('returns an array of loosely matching values', () => {
         const list = new List([1, 2, 3]);
         const filteredList = list.filter(item => {
-            return item == "2";
+            return item == '2';
         });
         assert.equal(filteredList, 2);
     });
+});
 
+describe('findIndex', () => {
+
+    it('returns the index of the first strictly matching value', () => {
+
+        const list = new List([1, 2, 3]);
+        const foundIndex = list.findIndex(item => {
+            return item % 2 === 0;
+        });
+        assert.equal(foundIndex, 1);
+
+    });
 
 });
