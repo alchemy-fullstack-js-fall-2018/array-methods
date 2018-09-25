@@ -68,7 +68,7 @@ Any holes in the `List` should be skipped (don't call the callback function).
 
 Returns the final accumulator value.
 
-### 5. `every(array, callback)`
+### 5. `every(callback)`
 
 Takes a callback of signature `(item) => {}` 
 and returns an overall `true` value if **all** callback return `true` or a truthy value.
