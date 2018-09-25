@@ -74,10 +74,18 @@ describe ('reduce', () => {
 
 describe ('every', () => {
 
-    function isANumber(element) {
-
+    function isLetterA(element) {
+        return element === 'A';
     }
 
-    it('every: return true when all element me')
+    it('every: return true when all elements meet the criteria in callback', () => {
+        const list = new List(['A', 'A', 'A', 'A']);
+        const result = list.every(isLetterA);
+        assert.equal (result, true);
+    });
+
+    it('every: return false when any element does not meet the criteria in callback', () => {
+
+    });
 
 });
