@@ -3,8 +3,8 @@ Array Methods
 
 ## Description
 
-Implement functions that perform array operations similar to how they exist on the built-in JavaScript array object. Main difference is that instead of being methods on the array, they are stand-alone functions that accept an array as well as 
-other required paratmers.
+Implement a class `List` that perform array operations similar to how they exist on the built-in JavaScript
+array object. 
 
 This is a solo assignment. Try and do these from scratch. 
 
@@ -27,35 +27,35 @@ The instructions include how to handle array "holes". This is for one of the bon
 
 ## Methods to Implement
 
-### 1. `map(array, callback)`
+### 1. `map(callback)`
 
 Takes a callback of signature `(item) => {}` 
-and creates a new array with the return value of each called callback. 
+and creates a new `List` with the return value of each called callback. 
 
-Skips any holes in the array, and mapped array should have hole in same spot. The mapped array should have
-the same `.length` value as the original array.
+Skips any holes in the `List`, and mapped `List` should have hole in same spot. The mapped `List` should have
+the same `.length` value as the original `List`.
 
 Returns the "mapped" new array.
 
-### 2. `filter(array, callback)`
+### 2. `filter(callback)`
 
 Takes a callback of signature `(item) => {}` 
-and creates a new array with all items whose callback returned `true` or a truthy value. 
+and creates a new `List` with all items whose callback returned `true` or a truthy value. 
 
-Any holes in the array should be skipped (don't call the callback function, it always "fails" predicate).
+Any holes in the `List` should be skipped (don't call the callback function, it always "fails" predicate).
 
-Returns the new array of "filtered" items.
+Returns the new `List` of "filtered" items.
 
-### 3. `findIndex(array, callback)`
+### 3. `findIndex(callback)`
 
 Takes a callback of signature `(item) => {}` 
 and returns the index of the first item whose callback returns `true` or a truthy value.
 
-Any holes in the array should be skipped (don't call the callback function, it always "fails" predicate).
+Any holes in the `List` should be skipped (don't call the callback function, it always "fails" predicate).
 
 Returns the index of the found item, `-1` if no item is found.
 
-### 4. `reduce(array, callback [, initialValue])`
+### 4. `reduce(callback [, initialValue])`
 
 Takes a callback of signature `(accumulator, item) => {}` and an (optional) 
 second `initialValue` parameter that is the initial value of the accumulator. After each function
@@ -64,7 +64,7 @@ call, the return value is passed as the accumulator argument of the next functio
 If the second `initialValue` parameter is not supplied, the first function call should be the 
 first item as the `accumulator`, and the second array item as the `item`.
 
-Any holes in the array should be skipped (don't call the callback function).
+Any holes in the `List` should be skipped (don't call the callback function).
 
 Returns the final accumulator value.
 
@@ -73,9 +73,9 @@ Returns the final accumulator value.
 Takes a callback of signature `(item) => {}` 
 and returns an overall `true` value if **all** callback return `true` or a truthy value.
 
-Any holes in the array should be skipped (don't call the callback function).
+Any holes in the `List` should be skipped (don't call the callback function).
 
-Returns the `true` if every item in the array has returned `true`, otherwise `false`.
+Returns the `true` if every item in the `List` has returned `true`, otherwise `false`.
 
 ## Rubric **10pts**
 * Each test: *1pt* (x 5 = 5pts)
@@ -83,14 +83,14 @@ Returns the `true` if every item in the array has returned `true`, otherwise `fa
 
 ## Challange
 
-### `foreach(array, callback)`
+### `foreach(callback)`
 
 Takes a callback of signature `(item, index) => {}` 
-and calls that function for each item in the array.
+and calls that function for each item in the `List`.
 
 HINT: To test `foreach`, you'll need to use a closure variable to "store" the calls to the callback function.
 
-Any holes in the array should be skipped (don't call the callback function).
+Any holes in the `List` should be skipped (don't call the callback function).
 
 Returns `undefined`.
 
