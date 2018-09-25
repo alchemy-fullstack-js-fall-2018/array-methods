@@ -59,7 +59,27 @@ describe('filter', () => {
 
     });
     
+});
 
+describe('findIndex', () => {
+
+    const isEven = item => {
+        return item % 2 === 0;
+    };
+
+    describe('findIndex method tests', () => {
+
+        it('returns the index of the first item in the array with a callback that returns true or truthy', () => {
+            const list = new List([1, 4, 5, 6, 7]);
+            const index = list.findIndex(item => {
+                return isEven(item);
+            });
+
+            assert.deepEqual(index, 1);
+        });        
+
+    });
+    
 });
 
 describe('every', () => {
