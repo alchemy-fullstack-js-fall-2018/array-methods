@@ -1,0 +1,32 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "Lab #2",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R-i-t-a/array-methods.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R-i-t-a/array-methods/issues"
+  },
+  "homepage": "https://github.com/R-i-t-a/array-methods#readme",
+  "dependencies": {
+    "eslint": "^5.6.0"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
