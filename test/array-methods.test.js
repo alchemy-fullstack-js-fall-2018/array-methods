@@ -76,6 +76,15 @@ describe('findIndex', () => {
             });
 
             assert.deepEqual(index, 1);
+        });     
+
+        it('skips empty items', () => {
+            const list = new List([1, , 4, 5, 6, 7]);
+            const index = list.findIndex(item => {
+                return isEven(item);
+            });
+
+            assert.deepEqual(index, 2);
         });        
 
     });
