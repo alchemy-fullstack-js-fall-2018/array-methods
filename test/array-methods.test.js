@@ -9,6 +9,14 @@ describe('assumptions', () => {
         });
         assert.deepEqual(doubles, [2, 4, 6]);
     });
+    it('filter', () => {
+        const numbers = [1, 2, 3];
+        const filtered = numbers.filter(item => {
+            return item > 1;
+        });
+        assert.deepEqual(filtered, [2, 3]);
+
+    });
 });
 
 describe('list class', () => {
@@ -19,4 +27,11 @@ describe('list class', () => {
         });
         assert.deepEqual(doubles, [2, 4, 6]);
     });
-})
+    it('filter', () => {
+        const numbers = new List ([1, 2, 3]);
+        const filtered = numbers.filter(item => {
+            return item > 1;
+        });
+        assert.deepEqual(filtered, [2, 3]);
+    });
+});
