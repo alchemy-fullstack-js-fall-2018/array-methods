@@ -17,6 +17,18 @@ describe('map', () => {
             assert.deepEqual(doubleValues, [2, 6, 10, 14]);
         });       
     });
+    
+    describe('map method tests', () => {
+        it('returns an array where empty items are returned as empty in the same position', () => {
+            const list = new List([1, 3, , 5, , 7]);
+            const doubleValues = list.map(item => {
+                return isDouble(item);
+            });
+
+            assert.deepEqual(doubleValues, [2, 6, , 10, , 14]);
+        });       
+    });
+
 });
 
 describe('every', () => {
