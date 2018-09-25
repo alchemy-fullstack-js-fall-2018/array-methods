@@ -122,3 +122,31 @@ describe('reduce', () => {
         assert.equal(sum, 10);
     });
 });
+
+describe('every', () => {
+    describe('assumptions', () => {
+
+        it('returns true if every item passes', () => {
+            const numbers = [1, 2, 3, 4];
+            const result = numbers.every((item) => item < 5);
+            assert.equal(result, true);
+        });
+
+        it('returns false if one item fails', () => {
+            const numbers = [1, 2, 3, 4];
+            const result = numbers.every((item) => item > 5);
+            assert.equal(result, false);
+        });
+
+    });
+    it('returns true if every item passes', () => {
+        const list = new List([1, 2, 3, 4]);
+        const result = list.every((item) => item < 5);
+        assert.equal(result, true);
+    });
+    it('returns false if one item fails', () => {
+        const list = new List([1, 2, 3, 4]);
+        const result = list.every((item) => item > 5);
+        assert.equal(result, false);
+    });
+});
