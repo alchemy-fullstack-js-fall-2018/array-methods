@@ -86,5 +86,11 @@ describe('every', () => {
         const everiedList = list.every(item => item < 5);
         assert.equal(everiedList, true);
     });
+
+    it('returns false if not all items return true or truthy value', () => {
+        const list = new List([1, 2, 3]);
+        const everiedList = list.every(item => item < 3);
+        assert.equal(everiedList, false);
+    });
     
 });
