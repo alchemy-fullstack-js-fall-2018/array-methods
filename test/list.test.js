@@ -31,14 +31,20 @@ describe('map', () => {
 
 describe('filter', () => {
 
-    it('returns an array of matching values', () => {
-
+    it('returns an array of strictly matching values', () => {
         const list = new List([1, 2, 3]);
         const filteredList = list.filter(item => {
             return item % 2 === 0;
         });
         assert.equal(filteredList, 2);
+    });
 
+    it('returns an array of loosely matching values', () => {
+        const list = new List([1, 2, 3]);
+        const filteredList = list.filter(item => {
+            return item == "2";
+        });
+        assert.equal(filteredList, 2);
     });
 
 
