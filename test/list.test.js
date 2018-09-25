@@ -107,6 +107,18 @@ describe('foreach', () => {
         list.foreach(() => actions += 1);
         assert.equal(actions, 3);        
     });
+
+
+    it('returns the list of actions', () => {
+        const list = new List([1, 2, 3]);
+        let actions = [];
+        list.foreach(item => {
+            const action = () => console.log(item);
+            actions.push(action.toString());
+            action();
+        });
+        assert.deepEqual(actions, ['() => console.log(item)', '() => console.log(item)', '() => console.log(item)']);
+    });
     
 
 });
