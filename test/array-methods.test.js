@@ -85,7 +85,16 @@ describe('findIndex', () => {
             });
 
             assert.deepEqual(index, 2);
-        });        
+        });
+        
+        it('returns -1 if no item in the array has a callback that returns true or truthy', () => {
+            const list = new List([1, 3, 5, 7]);
+            const index = list.findIndex(item => {
+                return isEven(item);
+            });
+
+            assert.deepEqual(index, -1);
+        });  
 
     });
     
