@@ -18,5 +18,13 @@ describe('array methods', () => {
         });
     });
 
+    describe('filter', () => {
+        it('returns new array of true items', () => {
+            const result = list.filter(this.items, (n) => {
+                return n < 4;
+            });
+            assert.deepEqual(result, [1, 2, 3]);
+        });
+    });
 
 });
