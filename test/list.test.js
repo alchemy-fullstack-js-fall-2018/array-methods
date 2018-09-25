@@ -78,3 +78,13 @@ describe('reduce', () => {
     });
 
 });
+
+describe('every', () => {
+
+    it('returns true if all items return true or truthy value', () => {
+        const list = new List([1, 2, 3]);
+        const everiedList = list.every(item => item < 5);
+        assert.equal(everiedList, true);
+    });
+    
+});
