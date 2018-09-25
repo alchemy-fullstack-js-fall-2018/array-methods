@@ -76,7 +76,6 @@ describe('reduce', () => {
         }, []);
         assert.deepEqual(reducedList, [1, 2, 3]);
     });
-
 });
 
 describe('every', () => {
@@ -92,5 +91,17 @@ describe('every', () => {
         const everiedList = list.every(item => item < 3);
         assert.equal(everiedList, false);
     });
-    
 });
+
+describe('foreach', () => {
+
+    it('returns undefined', () => {
+        const list = new List([1, 2, 3]);
+        const foreachedList = list.foreach();
+        assert.equal(foreachedList, undefined);        
+    });
+    
+    // list.foreach(item => console.log(item));
+
+});
+
