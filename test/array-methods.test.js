@@ -50,7 +50,7 @@ describe ('findIndex', () => {
         assert.equal(result, 3);
     });
 
-    it('findIndex: returns neg one when no elements meet the criteria in the callback', () => {
+    it('findIndex: returns -1 when no elements meet the criteria in the callback', () => {
         const list = new List ([1, 2, 3, 4]);
         const result = list.findIndex(isGreaterThanNine);
         assert.equal(result, -1);
