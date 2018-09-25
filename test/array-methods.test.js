@@ -16,5 +16,14 @@ describe('every', () => {
 
             assert.equal(allEvens, false);
         });
+
+        it('returns true if all items in the array pass the test', () => {
+            const list = new List([2, 4, 6, 8]);
+            const allEvens = list.every(item => {
+                return isEven(item);
+            });
+
+            assert.equal(allEvens, true);
+        });
     });
 });
