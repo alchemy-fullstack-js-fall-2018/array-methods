@@ -54,4 +54,10 @@ describe('findIndex', () => {
         assert.equal(foundIndex, 1);
     });
 
+    it('returns -1 if nothing matches', () => {
+        const list = new List([1, 2, 3]);
+        const foundIndex = list.findIndex(item => item % 5 === 0);
+        assert.equal(foundIndex, -1);
+    });
+
 });
