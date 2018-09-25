@@ -59,5 +59,14 @@ describe('findIndex', () => {
         const foundIndex = list.findIndex(item => item % 5 === 0);
         assert.equal(foundIndex, -1);
     });
+});
+
+describe('reduce', () => {
+
+    it('returns the accumulator after iterating through the array', () => {
+        const list = new List([1, 2, 3]);
+        const reducedList = list.reduce((accumulator, item) => accumulator += item * 2);
+        assert.equal(reducedList, 12);
+    });
 
 });
