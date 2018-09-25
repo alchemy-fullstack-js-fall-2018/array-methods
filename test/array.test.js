@@ -24,7 +24,10 @@ describe('test arrays',() => {
     })
 
     it ('this returns the first element of the index', () => {
-        
+        const findIndex = list.findIndex(item => {
+            return item < 6;
+        })
+        assert.deepEqual(findIndex, 0)
     })
 
 });
