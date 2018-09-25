@@ -51,13 +51,19 @@ describe('filter', () => {
 describe('findIndex', () => {
 
     it('returns the index of the first strictly matching value', () => {
-
         const list = new List([1, 2, 3]);
         const foundIndex = list.findIndex(item => {
             return item % 2 === 0;
         });
         assert.equal(foundIndex, 1);
+    });
 
+    it('returns the index of the first strictly matching value', () => {
+        const list = new List([1, 2, 3]);
+        const foundIndex = list.findIndex(item => {
+            return item == '2';
+        });
+        assert.equal(foundIndex, 1);
     });
 
 });
