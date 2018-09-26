@@ -36,6 +36,20 @@ describe('test arrays',() => {
         })
         assert.deepEqual(sum, 23)
     })
+
+    it ('this verifies if all items in array are true', () => {
+        const checkAll = list.every(item => {
+            return item < 15;
+        })
+        assert.deepEqual(checkAll, false)
+    })
+
+    it ('this verifies if all items in array are true', () => {
+        const checkAll = list.every(item => {
+            return item > 15;
+        })
+        assert.deepEqual(checkAll, false)
+    })
 });
 
     
