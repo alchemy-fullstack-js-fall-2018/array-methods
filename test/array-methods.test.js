@@ -68,7 +68,7 @@ describe ('reduce', () => {
         // eslint-disable-next-line
         const list = new List([2, , 3, 4]);
         const result = list.reduce(doubleAndSum);
-        assert.equal (result, 18);
+        assert.equal (result, 16);
     });
 
     it('reduce: returns a single reduced value based on the callback (with initial value)', () => {
