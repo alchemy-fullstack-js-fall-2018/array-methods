@@ -106,6 +106,14 @@ describe('reduce', () => {
         }, []);
         assert.deepEqual(reducedList, [1, 2, 3]);
     });
+    it('returns an object accumulator after iterating through the array', () => {
+        const list = new List([1, 2]);
+        const reducedList = list.reduce((accumulator, item, index) => {
+            accumulator[`item-${index}`] = item;
+            return accumulator;
+        }, {});
+        assert.deepEqual(reducedList, { 'item-0': 1, 'item-1': 2 });
+    });
     it('skips holes', () => {
         const list = new List([undefined,, 2, 3]);
         const reducedList = list.reduce((accumulator, item) => {
