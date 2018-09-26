@@ -19,11 +19,12 @@ describe('map', () => {
         }); 
 
         it('returns an array where empty items are returned as empty in the same position', () => {
+            /* eslint-disable-next-line */
             const list = new List([1, 3, , 5, , 7]);
             const doubleValues = list.map(item => {
                 return isDouble(item);
             });
-    
+            /* eslint-disable-next-line */
             assert.deepEqual(doubleValues, [2, 6, , 10, , 14]);
         });       
 
@@ -49,6 +50,7 @@ describe('filter', () => {
         });    
 
         it('skips empty items and does not return them', () => {
+            /* eslint-disable-next-line */
             const list = new List([, 4, 5, 6, , 7]);
             const filtered = list.filter(item => {
                 return isEven(item);
@@ -79,6 +81,7 @@ describe('findIndex', () => {
         });     
 
         it('skips empty items', () => {
+            /* eslint-disable-next-line */
             const list = new List([1, , 4, 5, 6, 7]);
             const index = list.findIndex(item => {
                 return isEven(item);
@@ -117,7 +120,16 @@ describe('reduce', () => {
             }, 5);
 
             assert.deepEqual(sum, 21);
-        });    
+        });
+        
+        it('returns an the sum of all items in the array when no initial value is provided', () => {
+            const list = new List([1, 4, 5, 6]);
+            const sum = list.reduce((accumulator, currentValue) => {
+                return reducer(accumulator, currentValue);
+            });
+
+            assert.deepEqual(sum, 16);
+        });
 
     });
     
@@ -149,6 +161,7 @@ describe('every', () => {
         });
         
         it('returns true if all non-empty items in the array pass the test', () => {
+            /* eslint-disable-next-line */
             const list = new List([2, 4, , 6, , 8]);
             const allEvens = list.every(item => {
                 return isEven(item);
