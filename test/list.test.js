@@ -1,5 +1,6 @@
 /*eslint-disable no-sparse-arrays*/
 
+
 const assert = require('assert');
 const List = require('../lib/list');
 
@@ -94,8 +95,6 @@ describe('findIndex', () => {
         const foundIndex = list.findIndex((item, index) => item === index);
         assert.equal(foundIndex, 1);
     });
-
-
 });
 
 describe('reduce', () => {
@@ -144,6 +143,12 @@ describe('every', () => {
         const everiedList = list.every(item => item < 5);
         assert.equal(everiedList, true);
     });
+
+    it('uses index', () => {
+        const list = new List([1, 2, 3]);
+        const everiedList = list.every((item, index) => item === index + 1);
+        assert.equal(everiedList, true);
+    });
 });
 
 describe('foreach', () => {
@@ -165,6 +170,7 @@ describe('foreach', () => {
         const list = new List([1, 2, 3]);
         let actions = [];
         list.foreach(item => {
+            /*eslint-disable-next-line*/
             const action = () => console.log(item);
             actions.push(action.toString());
         });
