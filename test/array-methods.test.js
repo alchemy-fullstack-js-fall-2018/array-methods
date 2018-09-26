@@ -106,8 +106,7 @@ describe('findIndex', () => {
 describe('reduce', () => {
 
     const reducer = (accumulator, currentValue) => {
-        accumulator = accumulator + currentValue;
-        return accumulator;
+        return accumulator = accumulator + currentValue;
 
     };
     
