@@ -91,7 +91,7 @@ describe('findIndex', () => {
     });
 });
 
-describe('reduce', () => {
+describe.skip('reduce', () => {
     it('will add all array items together', () => {
         const list = new List([4, 5, 10]);
         const reduction = list.reduce((accumulator, item) => accumulator + item);
