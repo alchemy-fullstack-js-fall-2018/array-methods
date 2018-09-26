@@ -70,7 +70,6 @@ describe('findIndex', () => {
         const foundIndex = list.findIndex(item => item == '2');
         assert.equal(foundIndex, 2);
     });
-
 });
 
 describe('reduce', () => {
@@ -102,6 +101,12 @@ describe('every', () => {
         const list = new List([1, 2, 3]);
         const everiedList = list.every(item => item < 3);
         assert.equal(everiedList, false);
+    });
+
+    it('skips holes', () => {
+        const list = new List([1,, 2, 3]);
+        const everiedList = list.every(item => item < 5);
+        assert.equal(everiedList, true);
     });
 });
 
