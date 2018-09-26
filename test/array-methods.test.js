@@ -151,15 +151,54 @@ describe('reduce', () => {
             assert.deepEqual(reducedArr, 14);
         }); 
 
-        it('holes in array are skipped when hole is first element of array', () => {
-            //eslint-disable-next-line
-            const arr = [ , 4, 5];
+        // it('holes in array are skipped when hole is first element of array', () => {
+        //     //eslint-disable-next-line
+        //     const arr = [ , 4, 5];
+        //     const list = new List(arr);
+        //     const reducedArr = list.reduce((acc, item) => {
+        //         return acc += item;
+        //     });
+
+        //     assert.deepEqual(reducedArr, 9);
+        // }); 
+    }); 
+});
+
+describe('every', () => {
+    describe('array method assumptions', () => {
+
+        const isEven = item => {
+            return item % 2 === 0;
+        };
+        it('returns true if all elements in array evaluate to true per callback', () => {
+            const arr = [2, 4, 6];
             const list = new List(arr);
-            const reducedArr = list.reduce((acc, item) => {
-                return acc += item;
+            const hasEvens = list.every((item) => {
+                return isEven(item);
             });
 
-            assert.deepEqual(reducedArr, 9);
-        }); 
-    }); 
+            assert.deepEqual(hasEvens, true);
+        });
+
+        it('returns false if if any element in array evaluate to true per callback', () => {
+            const arr = [2, 5, 6];
+            const list = new List(arr);
+            const hasEvens = list.every((item) => {
+                return isEven(item);
+            });
+
+            assert.deepEqual(hasEvens, false);
+        });
+
+        it('any holes are skipped', () => {
+            //eslint-disable-next-line
+            const arr = [2, 5, , 6];
+            const list = new List(arr);
+            const hasEvens = list.every((item) => {
+                return isEven(item);
+            });
+
+            assert.deepEqual(hasEvens, false);
+        });
+    });
 });
