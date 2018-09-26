@@ -34,15 +34,15 @@ describe('map', () => {
 describe('filter', () => {
 
     it('returns an array of strictly matching values', () => {
-        const list = new List([1, 2, 3]);
+        const list = new List([1, 2, 3, 4]);
         const filteredList = list.filter(item => item % 2 === 0);
-        assert.equal(filteredList, 2);
+        assert.deepEqual(filteredList, [2, 4]);
     });
 
     it('returns an array of loosely matching values', () => {
-        const list = new List([1, 2, 3]);
-        const filteredList = list.filter(item => item == '2');
-        assert.equal(filteredList, 2);
+        const list = new List([1, 2, 3, 4]);
+        const filteredList = list.filter(item => item % 2 == '0');
+        assert.deepEqual(filteredList, [2, 4]);
     });
 
     it('skips holes', () => {
@@ -53,15 +53,9 @@ describe('filter', () => {
 
     it('uses index', () => {
         const list = new List([1, 1, 3]);
-        const filteredList = list.filter((item, index) => item === index);
-        assert.equal(filteredList, 1);
+        const filteredList = list.filter((item, index) => item === index || item === 3);
+        assert.deepEqual(filteredList, [1, 3]);
     });
-
-    // it('doesn\'t skip undefineds', () => {
-    //     const list = new List([1, undefined, 2, 3]);
-    //     const filteredList = list.filter(item => item % 2 === 0);
-    //     assert.equal(filteredList, 2);
-    // });
 });
 
 describe('findIndex', () => {
@@ -125,7 +119,6 @@ describe('reduce', () => {
         const reducedList = list.reduce((accumulator, item, index) => accumulator + (item * index), 0);
         assert.equal(reducedList, 8);
     });
-
 });
 
 describe('every', () => {
@@ -194,6 +187,5 @@ describe('foreach', () => {
         list.foreach((item, index) => indices.push(index));
         assert.deepEqual(indices, [0, 1, 2]);
     });
-    
 });
 
