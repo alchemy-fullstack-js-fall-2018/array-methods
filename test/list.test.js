@@ -113,12 +113,12 @@ describe('reduce', () => {
         assert.deepEqual(reducedList, [1, 2, 3]);
     });
     it('skips holes', () => {
-        const list = new List([1,, 2, 3]);
+        const list = new List([undefined,, 2, 3]);
         const reducedList = list.reduce((accumulator, item) => {
             accumulator.push(item);
             return accumulator;
         }, []);
-        assert.deepEqual(reducedList, [1, 2, 3]);
+        assert.deepEqual(reducedList, [undefined, 2, 3]);
     });
     it('uses index', () => {
         const list = new List([1, 2, 3]);
@@ -143,9 +143,9 @@ describe('every', () => {
     });
 
     it('skips holes', () => {
-        const list = new List([1,, 2, 3]);
-        const everiedList = list.every(item => item < 5);
-        assert.equal(everiedList, true);
+        const list = new List(['',, 2, 3]);
+        const everiedList = list.every(item => typeof item == 'number');
+        assert.equal(everiedList, false);
     });
 
     it('uses index', () => {
@@ -182,7 +182,7 @@ describe('foreach', () => {
     });
 
     it('skips holes', () => {
-        const list = new List([1,, 2, 3]);
+        const list = new List([undefined,, 2, 3]);
         let actions = 0;
         list.foreach(() => actions += 1);
         assert.equal(actions, 3);
