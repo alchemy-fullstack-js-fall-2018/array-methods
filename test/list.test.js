@@ -87,6 +87,16 @@ describe('reduce', () => {
         }, []);
         assert.deepEqual(reducedList, [1, 2, 3]);
     });
+    it('skips holes', () => {
+        const list = new List([1,, 2, 3]);
+        const reducedList = list.reduce((accumulator, item) => {
+            accumulator.push(item);
+            return accumulator;
+        }, []);
+        assert.deepEqual(reducedList, [1, 2, 3]);
+    });
+
+
 });
 
 describe('every', () => {
