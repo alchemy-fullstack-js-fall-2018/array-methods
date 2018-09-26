@@ -71,7 +71,7 @@ describe('findIndex', () => {
         assert.equal(foundIndex, 1);
     });
 
-    it('returns the index of the first strictly matching value', () => {
+    it('returns the index of the first loosely matching value', () => {
         const list = new List([1, 2, 3]);
         const foundIndex = list.findIndex(item => item == '2');
         assert.equal(foundIndex, 1);
@@ -88,6 +88,14 @@ describe('findIndex', () => {
         const foundIndex = list.findIndex(item => item == '2');
         assert.equal(foundIndex, 2);
     });
+
+    it('uses index', () => {
+        const list = new List([1, 1, 3]);
+        const foundIndex = list.findIndex((item, index) => item === index);
+        assert.equal(foundIndex, 1);
+    });
+
+
 });
 
 describe('reduce', () => {
