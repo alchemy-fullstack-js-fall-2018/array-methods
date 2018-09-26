@@ -46,9 +46,9 @@ describe('filter', () => {
     });
 
     it('skips holes', () => {
-        const list = new List([1,, 2, 3]);
-        const filteredList = list.filter(item => item % 2 === 0);
-        assert.equal(filteredList, 2);
+        const list = new List([false,, 2, 3]);
+        const filteredList = list.filter(item => !item);
+        assert.deepEqual(filteredList, [false]);
     });
 
     it('uses index', () => {
