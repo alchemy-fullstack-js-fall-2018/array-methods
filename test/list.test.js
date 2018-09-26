@@ -64,6 +64,13 @@ describe('findIndex', () => {
         const foundIndex = list.findIndex(item => item % 5 === 0);
         assert.equal(foundIndex, -1);
     });
+
+    it('skips holes', () => {
+        const list = new List([1,, 2, 3]);
+        const foundIndex = list.findIndex(item => item == '2');
+        assert.equal(foundIndex, 2);
+    });
+
 });
 
 describe('reduce', () => {
