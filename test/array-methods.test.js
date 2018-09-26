@@ -151,16 +151,16 @@ describe('reduce', () => {
             assert.deepEqual(reducedArr, 14);
         }); 
 
-        // it('holes in array are skipped when hole is first element of array', () => {
-        //     //eslint-disable-next-line
-        //     const arr = [ , 4, 5];
-        //     const list = new List(arr);
-        //     const reducedArr = list.reduce((acc, item) => {
-        //         return acc += item;
-        //     });
+        it('holes in array are skipped when hole is first element of array', () => {
+            //eslint-disable-next-line
+            const arr = [ , 4, 5];
+            const list = new List(arr);
+            const reducedArr = list.reduce((acc, item) => {
+                return acc += item;
+            });
 
-        //     assert.deepEqual(reducedArr, 9);
-        // }); 
+            assert.deepEqual(reducedArr, 9);
+        }); 
     }); 
 });
 
