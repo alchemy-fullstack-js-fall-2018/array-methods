@@ -37,6 +37,12 @@ describe('filter', () => {
         const filteredList = list.filter(item => item == '2');
         assert.equal(filteredList, 2);
     });
+
+    it('skips holes', () => {
+        const list = new List([1,, 2, 3]);
+        const filteredList = list.filter(item => item % 2 === 0);
+        assert.equal(filteredList, 2);
+    });
 });
 
 describe('findIndex', () => {
