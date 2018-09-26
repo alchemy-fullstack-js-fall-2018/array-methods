@@ -19,9 +19,8 @@ describe('map', () => {
 
     it('preserves holes', () => {
         const list = new List([1,, 2, 3]);
-
-        // do this later
-        
+        const mappedList = list.map(item => item * 2);
+        assert.deepEqual(mappedList, [2,, 4, 6]);        
     });
 });
 
@@ -108,18 +107,15 @@ describe('foreach', () => {
         assert.equal(actions, 3);        
     });
 
-
     it('returns the list of actions', () => {
         const list = new List([1, 2, 3]);
         let actions = [];
         list.foreach(item => {
             const action = () => console.log(item);
             actions.push(action.toString());
-            action();
         });
         assert.deepEqual(actions, ['() => console.log(item)', '() => console.log(item)', '() => console.log(item)']);
     });
     
-
 });
 
