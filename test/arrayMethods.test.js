@@ -39,8 +39,13 @@ describe('array methods', () => {
 
     describe('reduce', () => {
         it('returns the sum of all array items', () => {
-            const result = list.reduce(this.items, (a, b) => (a + b));
+            const result = list.reduce((a, b) => (a + b), 0);
             assert.deepEqual(result, 10);
+        });
+
+        it('substitutes initial values from array when no initial value is given', () => {
+            const result = list.reduce((a, b) => (a * b));
+            assert.deepEqual(result, 24);
         });
     });
     
