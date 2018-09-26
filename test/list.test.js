@@ -19,9 +19,9 @@ describe('map', () => {
     });
 
     it('preserves holes', () => {
-        const list = new List([1,, 2, 3]);
-        const mappedList = list.map(item => item * 2);
-        assert.deepEqual(mappedList, [2,, 4, 6]);        
+        const list = new List([undefined,, 2, 3]);
+        const mappedList = list.map(item => item);
+        assert.deepEqual(mappedList, [undefined,, 2, 3]);        
     });
 
     it('uses index', () => {
