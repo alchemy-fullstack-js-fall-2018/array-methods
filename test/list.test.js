@@ -183,6 +183,13 @@ describe('foreach', () => {
         list.foreach(() => actions += 1);
         assert.equal(actions, 3);
     });
+
+    it('uses index', () => {
+        const list = new List([1, 2, 3]);
+        let indices = [];
+        list.foreach((item, index) => indices.push(index));
+        assert.deepEqual(indices, [0, 1, 2]);
+    });
     
 });
 
