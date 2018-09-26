@@ -85,9 +85,9 @@ describe('findIndex', () => {
     });
 
     it('skips holes', () => {
-        const list = new List([1,, 2, 3]);
-        const foundIndex = list.findIndex(item => item == '2');
-        assert.equal(foundIndex, 2);
+        const list = new List([, undefined, 2, 3]);
+        const foundIndex = list.findIndex(item => item == undefined);
+        assert.equal(foundIndex, 1);
     });
 
     it('uses index', () => {
