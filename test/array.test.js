@@ -30,6 +30,12 @@ describe('test arrays',() => {
         assert.deepEqual(findIndex, 0)
     })
 
+    it ('reduces all the values in the array to a single output', () => {
+        const sum = list.reduce((acc, item) => {
+            return acc + item;
+        })
+        assert.deepEqual(sum, 23)
+    })
 });
 
-
+    
