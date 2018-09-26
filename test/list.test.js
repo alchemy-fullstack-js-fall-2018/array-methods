@@ -4,6 +4,28 @@
 const assert = require('assert');
 const List = require('../lib/list');
 
+describe('test indices', () => {
+
+    function testIndex(method) {
+        it(`uses index ${method}`, () => {
+            const list = new List([1, 2, 3]);
+            const indices = [];
+            list[method]((item, index) => indices.push(index));
+            assert.deepEqual(indices, [0, 1, 2]);
+        });
+    }
+
+    testIndex('map');
+    testIndex('filter');
+    testIndex('every');
+    testIndex('foreach');
+    
+    // fix:
+    // testIndex('findIndex');
+    // testIndex('reduce');
+});
+
+
 describe('map', () => {
 
     it('returns an array of the same length', () => {
