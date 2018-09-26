@@ -109,7 +109,6 @@ describe('reduce', () => {
         return accumulator = accumulator + currentValue;
 
     };
-    
     describe('reduce method tests', () => {
         
         it('returns an the sum of all items in the array plus an intial value', () => {
