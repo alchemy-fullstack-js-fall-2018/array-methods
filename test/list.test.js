@@ -134,6 +134,13 @@ describe('foreach', () => {
         });
         assert.deepEqual(actions, ['() => console.log(item)', '() => console.log(item)', '() => console.log(item)']);
     });
+
+    it('skips holes', () => {
+        const list = new List([1,, 2, 3]);
+        let actions = 0;
+        list.foreach(() => actions += 1);
+        assert.equal(actions, 3);
+    });
     
 });
 
