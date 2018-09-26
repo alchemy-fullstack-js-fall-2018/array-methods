@@ -72,5 +72,25 @@ describe('findIndex', () => {
 });
 
 describe('reduce', () => {
+    const reducer = (accumulator, currentValue) => {
+        return accumulator + currentValue;
+    };
 
-})
+    it('returns the total of the numbers in the array', () => {
+        const numbers = [1, 2, 3];
+        const result = numbers.reduce((accumulator, currentValue) => {
+            return reducer(accumulator, currentValue);
+        });
+        assert.equal(result, 6);
+    });
+
+    it('returns the total of the number in the array', () => {
+        const list = new List([1, 2, 3]);
+        const result = list.reduce((accumulator, currentValue) => {
+            return reducer(accumulator, currentValue);
+        });
+        assert.equal(result, 6);
+    });
+});
+
+
