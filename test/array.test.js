@@ -20,35 +20,35 @@ describe('test arrays', () => {
         const filterResults = list.filter(item => {
             return item >= 4;
         });
-        assert.deepEqual(filterResults, [5, 7, 8])
+        assert.deepEqual(filterResults, [5, 7, 8]);
     });
 
     it ('this returns the first element of the index', () => {
         const findIndex = list.findIndex(item => {
             return item < 6;
         });
-        assert.deepEqual(findIndex, 0)
+        assert.deepEqual(findIndex, 0);
     });
 
     it ('reduces all the values in the array to a single output', () => {
         const sum = list.reduce((acc, item) => {
             return acc + item;
         });
-        assert.deepEqual(sum, 23)
+        assert.deepEqual(sum, 23);
     });
 
     it ('this verifies if all items in array are true', () => {
         const checkAll = list.every(item => {
             return item < 15;
         });
-        assert.deepEqual(checkAll, false)
+        assert.deepEqual(checkAll, false);
     });
 
     it ('this verifies if all items in array are true', () => {
         const checkAll = list.every(item => {
             return item > 15;
         });
-        assert.deepEqual(checkAll, false)
+        assert.deepEqual(checkAll, false);
     });
 });
 
