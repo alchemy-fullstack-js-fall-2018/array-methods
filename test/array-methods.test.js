@@ -1,5 +1,5 @@
 const assert = require('assert');
-const List = require('../lib/array-methods')
+const List = require('../lib/array-methods');
 
 describe('assumptions', () => {
     it('map', () => {
@@ -17,6 +17,18 @@ describe('assumptions', () => {
         assert.deepEqual(filtered, [2, 3]);
 
     });
+    it('findIndex', () => {
+        const numbers = [1, 2, 3];
+        const firstTrue = numbers.findIndex(item => {
+            return item > 1;
+        });
+        assert.deepEqual(firstTrue, 1);
+    });
+    it('reduce', () => {
+        const numbers = [1, 2, 3];
+        const
+
+
 });
 
 describe('list class', () => {
@@ -34,4 +46,19 @@ describe('list class', () => {
         });
         assert.deepEqual(filtered, [2, 3]);
     });
+    it('findIndex', () => {
+        const numbers = new List ([1, 2, 3]);
+        const firstTrue = numbers.findIndex(item => {
+            return item > 1;
+        });
+        assert.deepEqual(firstTrue, 1);
+    });
+    it('findIndex no matches', () => {
+        const numbers = new List ([1, 2, 3]);
+        const firstTrue = numbers.findIndex(item => {
+            return item < 1;
+        });
+        assert.deepEqual(firstTrue, -1);
+    });
+
 });
