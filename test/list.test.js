@@ -22,6 +22,12 @@ describe('map', () => {
         const mappedList = list.map(item => item * 2);
         assert.deepEqual(mappedList, [2,, 4, 6]);        
     });
+
+    it('uses index', () => {
+        const list = new List([1, 2, 3]);
+        const mappedList = list.map((item, index) => item * (index + 1));
+        assert.deepEqual(mappedList, [1, 4, 9]);
+    });
 });
 
 describe('filter', () => {
@@ -43,6 +49,12 @@ describe('filter', () => {
         const filteredList = list.filter(item => item % 2 === 0);
         assert.equal(filteredList, 2);
     });
+
+    // it('doesn\'t skip undefineds', () => {
+    //     const list = new List([1, undefined, 2, 3]);
+    //     const filteredList = list.filter(item => item % 2 === 0);
+    //     assert.equal(filteredList, 2);
+    // });
 });
 
 describe('findIndex', () => {
