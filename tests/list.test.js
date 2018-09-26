@@ -9,8 +9,10 @@ describe('assumptions', () => {
     });
 
     it('map will skip empty array positions', () => {
+        /* eslint-disable-next-line */
         const numbers = [2,, 3];
         const addedTwo = numbers.map(item => item + 2);
+        /* eslint-disable-next-line */
         assert.deepEqual(addedTwo, [4,, 5]);
     });
 
@@ -50,10 +52,12 @@ describe('map', () => {
     });
 
     it('will skip empty array positions', () => {
+        /* eslint-disable-next-line */
         const list = new List([2, , 4]);
         const doubled = list.map(item => {
             return double(item);
         });
+        /* eslint-disable-next-line */
         assert.deepEqual(doubled, [4, , 8]);
     });
 
