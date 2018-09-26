@@ -50,6 +50,12 @@ describe('filter', () => {
         assert.equal(filteredList, 2);
     });
 
+    it('uses index', () => {
+        const list = new List([1, 1, 3]);
+        const filteredList = list.filter((item, index) => item === index);
+        assert.equal(filteredList, 1);
+    });
+
     // it('doesn\'t skip undefineds', () => {
     //     const list = new List([1, undefined, 2, 3]);
     //     const filteredList = list.filter(item => item % 2 === 0);
