@@ -1,0 +1,30 @@
+{
+  "name": "greet-and-calculate",
+  "version": "1.0.0",
+  "description": "## Configuration",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MackenzieBerliner-Glasser/greet-and-calculate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MackenzieBerliner-Glasser/greet-and-calculate/issues"
+  },
+  "homepage": "https://github.com/MackenzieBerliner-Glasser/greet-and-calculate#readme",
+  "dependencies": {
+    "jest": "^23.6.0",
+    "eslint": "^5.6.0"
+  }
+}
