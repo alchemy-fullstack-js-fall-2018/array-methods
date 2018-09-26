@@ -120,7 +120,11 @@ describe('reduce', () => {
         }, []);
         assert.deepEqual(reducedList, [1, 2, 3]);
     });
-
+    it('uses index', () => {
+        const list = new List([1, 2, 3]);
+        const reducedList = list.reduce((accumulator, item, index) => accumulator + (item * index), 0);
+        assert.equal(reducedList, 8);
+    });
 
 });
 
