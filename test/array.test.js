@@ -1,4 +1,4 @@
-/* eslint no-spare-arrays: off*/
+/* eslint no-sparse-arrays: off */
 
 const assert = require('assert');
 const List = require('../lib/array');
@@ -9,8 +9,7 @@ describe('test arrays', () => {
   
     beforeEach(() => {
         
-        //eslint-disable-line
-        /* eslint no-spare-arrays: off*/
+        
         list = new List([3, 5, , 7, 8]);
     });
 
