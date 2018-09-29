@@ -112,3 +112,17 @@ describe.skip('reduce', () => {
         assert.equal(reduction, 20);
     });
 });
+
+describe('every', () => {
+    it('will return true if all items return true or a truthy value', () => {
+        const list = new List([2, 4, 5, 8]);
+        const isTrue = list.every(item => item > 1);
+        assert.equal(isTrue, true);
+    });
+
+    it('will return false if one element is false or falsy', () => {
+        const list = new List([2, 4, 5, 8]);
+        const isFalse = list.every(item => item > 3);
+        assert.equal(isFalse, false);
+    });
+});
