@@ -33,6 +33,14 @@ describe('assumptions', () => {
         const reduction = numbers.reduce(((accumulator, item) => accumulator + item), 10);
         assert.equal(reduction, 32);
     });
+
+    it('every will return true if all items return true or truthy', () => {
+        const numbers = [3, 5, 6];
+        const isTrue = numbers.every(item => item < 10);
+        assert.equal(isTrue, true);
+    });
+
+    
 });
 
 const double = item => {
