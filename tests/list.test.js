@@ -112,7 +112,11 @@ describe('reduce', () => {
         assert.equal(reduction, 20);
     });
 
-    
+    it('will multiply together all items', () => {
+        const list = new List([2, 3, 4]);
+        const reduction = list.reduce(((accumulator, item) => accumulator * item));
+        assert.equal(reduction, 24);
+    });
 });
 
 describe('every', () => {
