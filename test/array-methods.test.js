@@ -25,8 +25,9 @@ describe('assumptions', () => {
         assert.deepEqual(firstTrue, 1);
     });
     it('reduce', () => {
-        const numbers = [1, 2, 3];
-        const
+        // const numbers = [1, 2, 3];
+    
+    });
 
 
 });
