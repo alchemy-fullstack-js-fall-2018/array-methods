@@ -76,7 +76,7 @@ describe('reduce', () => {
         return accumulator + currentValue;
     };
 
-    it('returns the total of the numbers in the array', () => {
+    it('returns the total of the numbers in the array ', () => {
         const numbers = [1, 2, 3];
         const result = numbers.reduce((accumulator, currentValue) => {
             return reducer(accumulator, currentValue);
@@ -93,4 +93,25 @@ describe('reduce', () => {
     });
 });
 
+describe('every', () => {
+    const isOdd = item => {
+        return item % 2 === 1;
+    };
+    
+    it('returns false if any item in the array fails the test', () => {
+        const list = new List([1, 3, 4, 7]);
+        const result = list.every(item => {
+            return isOdd(item);
+        });
+        assert.equal(result, false);
+    });
+
+    it('returns true if all items in the array pass the test', () => {
+        const list = new List([1, 3, 5, 7]);
+        const result = list.every(item => {
+            return isOdd(item);
+        });
+        assert.equal(result, true);
+    });
+});
 
